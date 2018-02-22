@@ -1,0 +1,132 @@
+
+/***************2018-02-03 23:16:35***************/
+
+max
+
+max@budetweb.ru
+
+true
+
+Array
+(
+)
+
+
+Array
+(
+    [name] => max
+    [email] => max@budetweb.ru
+    [phone] => +79621608787
+    [page-form] => true
+)
+
+
+/***************2018-02-03 23:35:48***************/
+
+MAXXXXXX
+
+max@budetweb.ru
+
+true
+
+Array
+(
+)
+
+
+Array
+(
+    [name] => MAXXXXXX
+    [email] => max@budetweb.ru
+    [phone] => +79621608787
+    [page-form] => true
+)
+
+
+/***************2018-02-04 00:10:52***************/
+
+Maxx-10
+
+max@budetweb.ru
+
+true
+
+Array
+(
+)
+
+
+Array
+(
+    [name] => Maxx-10
+    [email] => max@budetweb.ru
+    [phone] => +79621608787
+    [page-form] => true
+)
+
+
+/***************2018-02-04 00:12:27***************/
+
+test20
+
+fvfvfd@ghdf.ru
+
+true
+
+Array
+(
+)
+
+
+Array
+(
+    [name] => test20
+    [email] => fvfvfd@ghdf.ru
+    [phone] => +38025425425
+    [page-form] => true
+)
+
+
+/***************2018-02-05 14:00:38***************/
+
+test10
+
+Dsfsdfs@gxdfhcf.ru
+
+false
+
+Array
+(
+)
+
+
+Array
+(
+    [name] => test10
+    [email] => Dsfsdfs@gxdfhcf.ru
+    [phone] => +380533543543
+    [page-form] => false
+)
+
+
+/***************2018-02-05 14:02:20***************/
+
+test 11
+
+efrg2@rdgxd.ru
+
+true
+
+Array
+(
+)
+
+
+Array
+(
+    [name] => test 11
+    [email] => efrg2@rdgxd.ru
+    [phone] => 524254534
+    [page-form] => true
+)
+
