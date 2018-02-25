@@ -444,13 +444,33 @@ function submitForm() {
     var phone = form.find('[name=custom_mob_phone]').val();
 
     if(name && email && phone) {
+      console.log('Отправка пошла - первый ajax');
         $.ajax({
             type: 'POST',
             url: '/academy/amo.php',
             method: 'post',
             data: 'name='+name+'&email='+email+'&phone='+encodeURIComponent(phone),
             success: function () {
-            dataLayer.push({'event': 'event_name'});
+              $('.triggerClose').remove();
+              $('#partners p.lead').remove();
+              $(".loader").fadeIn();
+              setTimeout(function() {
+                $(".loader").fadeOut();
+                $(".modal-success").fadeIn();
+
+                dataLayer.push({'event': 'event_name'});
+                $( "#modal_callback_ok .top h4" ).remove();
+                $( "#modal_callback_ok .top" ).append("<h4>"+name+"</h4>");
+                $('form').trigger("reset");
+                setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
+                // Настройки модального окна после удачной отправки
+                $(".fancybox-close").click();
+                $('div.md-show').removeClass('md-show');
+                // $("#call_ok")[0].click();
+                setTimeout(function() {
+                  goJs();
+                }, 4000);
+              }, 1000);
             },
             error:  function(xhr, str) {
                 // alert('Возникла ошибка: ' + xhr.responseCode);
@@ -461,21 +481,45 @@ function submitForm() {
 
 
     if (formid.attr('id') == 'partners' || dataFields[3].value == 'zone' || formidpage.attr('id') == 'page-form') {
+      console.log('Отправка пошла');
+      $(".loader").fadeIn();
       $.ajax({
         type: 'POST',
         url: 'mail.php',
         data: dataFields,
-        statusCode: {
-          200: function() {
-            me.removeClass('send').trigger("reset");
+        success: function() {
+          console.log('Успех');
+            /*me.removeClass('send').trigger("reset");
             btnSubmit.attr('disabled', false);
-            var pop = me.closest('.modalWrapper').find('.triggerClose');
-            if (pop) {
+            var pop = me.closest('.modalWrapper').find('.triggerClose');*/
+            //создание попапа, отправка формы, перенаправление
+            setTimeout(function() {
+              $(".loader").fadeOut();
+              $(".modal-success").fadeIn();
+                      
+              dataLayer.push({'event': 'event_name'});
+              $( "#modal_callback_ok .top h4" ).remove();
+              $( "#modal_callback_ok .top" ).append("<h4>"+name+"</h4>");
+              $('form').trigger("reset");
+              setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
+              // Настройки модального окна после удачной отправки
+              $(".fancybox-close").click();
+              $('div.md-show').removeClass('md-show');
+              // $("#call_ok")[0].click();
+              setTimeout(function() {
+                //перенаправление
+                window.location.href = '/academy-packets/';
+              // $('#btnsuccess')[0].click();
+              }, 4000);
+            }, 1000);
+            //закрывает окно
+            /*if (pop) {
               pop.click();
-            }
-            window.location.href = 'https://pronetworking.ru/academy-packets/';
-            // $('#btnsuccess')[0].click();
-          }
+            }*/
+            
+          },
+        error:  function(xhr, str) {
+            alert('Возникла ошибка: ' + xhr.responseCode);
         }
       });
 

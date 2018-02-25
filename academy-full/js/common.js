@@ -467,13 +467,31 @@ function submitForm() {
         data: dataFields,
         statusCode: {
           200: function() {
+            console.log('Успех');
             me.removeClass('send').trigger("reset");
             btnSubmit.attr('disabled', false);
-            var pop = me.closest('.modalWrapper').find('.triggerClose');
-            if (pop) {
-              pop.click();
-            }
-            window.location.href = 'https://pronetworking.ru/academy-packets/';
+            console.log('Отправка пошла');
+            $(".loader").fadeIn();
+            setTimeout(function() {
+              $(".loader").fadeOut();
+              $(".modal-success").fadeIn();
+                      
+              dataLayer.push({'event': 'event_name'});
+              $( "#modal_callback_ok .top h4" ).remove();
+              $( "#modal_callback_ok .top" ).append("<h4>"+name+"</h4>");
+              $('form').trigger("reset");
+              setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
+              // Настройки модального окна после удачной отправки
+              $(".fancybox-close").click();
+              $('div.md-show').removeClass('md-show');
+              // $("#call_ok")[0].click();
+              setTimeout(function() {
+                //перенаправление
+                window.location.href = '/academy-packets/';
+              // $('#btnsuccess')[0].click();
+              }, 4000);
+            }, 1000);
+          
             // $('#btnsuccess')[0].click();
           }
         }

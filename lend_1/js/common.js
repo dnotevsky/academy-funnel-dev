@@ -198,16 +198,28 @@ $(function() {
                     method: 'post',
                     data: 'name='+name+'&email='+email,
                     success: function () {
-                        dataLayer.push({'event': 'event_name'});
-                        $( "#modal_callback_ok .top h4" ).remove();
-                        $( "#modal_callback_ok .top" ).append("<h4>"+name+"</h4>");
-                        $('form').trigger("reset");
-                        setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
+                    	$(".loader").fadeIn();
+                    	console.log('Успех');
                         // Настройки модального окна после удачной отправки
-                        $(".fancybox-close").click();
-                        $('div.md-show').removeClass('md-show');
-                        // $("#call_ok")[0].click();
-						goJs();
+                        setTimeout(function() {
+	                    	$(".loader").fadeOut();
+	                    	$(".modal-success").fadeIn();
+		                	
+	                		dataLayer.push({'event': 'event_name'});
+	                        $( "#modal_callback_ok .top h4" ).remove();
+	                        $( "#modal_callback_ok .top" ).append("<h4>"+name+"</h4>");
+	                        $('form').trigger("reset");
+	                        setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
+	                        // Настройки модального окна после удачной отправки
+	                        $(".fancybox-close").click();
+	                        $('div.md-show').removeClass('md-show');
+	                        // $("#call_ok")[0].click();
+							setTimeout(function() {
+								goJs();
+							}, 2400);
+								
+		                	
+	                    }, 1000);
                     },
                     error:  function(xhr, str) {
                         alert('Возникла ошибка: ' + xhr.responseCode);

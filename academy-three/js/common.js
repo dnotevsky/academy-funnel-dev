@@ -318,17 +318,44 @@ function submitForm() {
       // var phone = 5151515151515;
 
       if(name && email && phone) {
+        $(".loader").fadeIn();
           $.ajax({
               type: 'POST',
               url: '/academy-three/amo.php',
               method: 'post',
               data: 'name='+name+'&email='+email+'&phone='+encodeURIComponent(phone),
               success: function () {
-                dataLayer.push({'event': 'event_name'});
-
+                console.log('Успех');
+                /*me.removeClass('send').trigger("reset");
+                btnSubmit.attr('disabled', false);
+                var pop = me.closest('.modalWrapper').find('.triggerClose');*/
+                //создание попапа, отправка формы, перенаправление
+                setTimeout(function() {
+                  $(".loader").fadeOut();
+                  $(".modal-success").fadeIn();
+                          
+                  dataLayer.push({'event': 'event_name'});
+                  $( "#modal_callback_ok .top h4" ).remove();
+                  $( "#modal_callback_ok .top" ).append("<h4>"+name+"</h4>");
+                  $('form').trigger("reset");
+                  setTimeout(function(){  $("[name=send]").removeAttr("disabled"); }, 1000);
+                  // Настройки модального окна после удачной отправки
+                  $(".fancybox-close").click();
+                  $('div.md-show').removeClass('md-show');
+                  // $("#call_ok")[0].click();
+                  setTimeout(function() {
+                    //перенаправление
+                    window.location.href = '/academy-packets/';
+                  // $('#btnsuccess')[0].click();
+                  }, 2400);
+                }, 1000);
+                //закрывает окно
+                /*if (pop) {
+                  pop.click();
+                }*/
               },
               error:  function(xhr, str) {
-                  // alert('Возникла ошибка: ' + xhr.responseCode);
+                  alert('Возникла ошибка: ' + xhr.responseCode);
                   // alert(xhr.Error);
               }
           });
@@ -336,7 +363,7 @@ function submitForm() {
 
 
 
-      $.ajax({
+      /*$.ajax({
         type: 'POST',
         // url: 'mail.php',
         // data: dataFields,
@@ -352,7 +379,7 @@ function submitForm() {
             // $('#btnsuccess')[0].click();
           }
         }
-      });
+      });*/
     } else {
 
       $.ajax({

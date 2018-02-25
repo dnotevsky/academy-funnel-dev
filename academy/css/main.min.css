@@ -2089,6 +2089,7 @@ form .btn-primary {
 }
 
 .send .cssload-loader {
+    opacity: 0;
     position: absolute;
     left: -webkit-calc(50% - 60px);
     left: calc(50% - 60px);
@@ -2101,7 +2102,7 @@ form .btn-primary {
     -moz-border-radius: 50%;
     -webkit-perspective: 1500px;
     perspective: 1500px;
-    z-index: 999;
+    z-index: -1;
     top: 30px;
     -webkit-transition: all .3s;
     -o-transition: all .3s;
@@ -3358,9 +3359,9 @@ header .partners img {
     background: url(../img/prc-1.png) center top no-repeat
 }
 
-.section7 .item.left .block ul:first-of-type {
+/* .section7 .item.left .block ul:first-of-type {
     margin: 35px 0 50px 0
-}
+} */
 
 .section7 .item.left .block p.text {
     color: #1e213a
@@ -4390,7 +4391,7 @@ footer p a:hover {
     }
 
     .section6 .big-slider .item.one {
-        background: url(../img/slide-1-2.png) top 150px left 50px no-repeat;
+        background: url(../img/slide-1-2.png) top 50px left 50px no-repeat;
         -webkit-background-size: contain;
         background-size: contain
     }
@@ -4436,7 +4437,7 @@ footer p a:hover {
     }
 
     .section6 .big-slider .item.two {
-        background: url(../img/slide-2-2.png) top 188px left -7px no-repeat;
+        background: url(../img/slide-2-2.png) top 88px left -7px no-repeat;
         -webkit-background-size: contain;
         background-size: contain
     }
@@ -4497,7 +4498,7 @@ footer p a:hover {
     }
 
     .section6 .big-slider .item.three {
-        background: url(../img/slide-3-2.png) top 174px left -9px no-repeat;
+        background: url(../img/slide-3-2.png) top 74px left -9px no-repeat;
         -webkit-background-size: contain;
         background-size: contain
     }
@@ -5088,7 +5089,7 @@ footer p a:hover {
     }
 
     .section6 .big-slider .item {
-        padding-bottom: 80px
+        padding-bottom: 100px
     }
 
     .section6 .big-slider .item .num {
@@ -5112,7 +5113,7 @@ footer p a:hover {
     }
 
     .section6 .big-slider .item.one {
-        background: url(../img/slide-1-2.png) top 150px left 10px no-repeat;
+        background: url(../img/slide-1-2.png) top 50px left 10px no-repeat;
         -webkit-background-size: contain;
         background-size: contain
     }
@@ -5163,7 +5164,7 @@ footer p a:hover {
     }
 
     .section6 .big-slider .item.two {
-        background: url(../img/slide-2-2.png) top 188px left 0 no-repeat;
+        background: url(../img/slide-2-2.png) top 88px left 0 no-repeat;
         -webkit-background-size: contain;
         background-size: contain
     }
@@ -5227,7 +5228,7 @@ footer p a:hover {
     }
 
     .section6 .big-slider .item.three {
-        background: url(../img/slide-3-2.png) top 174px left -9px no-repeat;
+        background: url(../img/slide-3-2.png) top 74px left -9px no-repeat;
         -webkit-background-size: contain;
         background-size: contain
     }
@@ -5957,7 +5958,8 @@ footer p a:hover {
     .section6 .big-slider .item.two {
         background: url(../img/slide-2-2.png) center no-repeat;
         -webkit-background-size: contain;
-        background-size: contain
+        background-size: contain;
+        background-position: 0 300px;
     }
 
     .section6 .big-slider .item.two .row {
@@ -6021,7 +6023,8 @@ footer p a:hover {
     .section6 .big-slider .item.three {
         background: url(../img/slide-3-2.png) center no-repeat;
         -webkit-background-size: contain;
-        background-size: contain
+        background-size: contain;
+        background-position: 0 300px;
     }
 
     .section6 .big-slider .item.three .row {
@@ -7232,4 +7235,152 @@ footer p a:hover {
     footer p {
         font-size: 18px
     }
+}
+
+/* MODAL */
+@keyframes loader {
+    0% { height: 30%; }
+    100% { height: 100%; }
+}
+
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 10;
+    text-align: center;
+    display: none;
+    z-index: 5000;
+}
+
+.loader .loader-block {
+    width: 20px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.loader-block .loader-line:first-child {
+    left: 0;
+    margin-left: 0;
+    animation-delay: 0s;
+}
+
+.loader-block .loader-line:last-child {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    animation-delay: .2s;
+}
+
+.loader-block .loader-line {
+    position: absolute;
+    width: 4px;
+    height: 30%;
+    background-color: #fff;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    animation-name: loader;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .15s;
+}
+
+.modal-success {
+    z-index: 5000;
+}
+
+.hidden {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#modal_callback_ok {
+    text-align: center;
+    min-width: 300px;
+    max-width: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top: 50%;
+    margin-top: -112px;
+    z-index: 5000;
+}
+
+#modal_callback_ok .top {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    background: #f9f9f9;
+}
+
+#modal_callback_ok .top:after {
+    content: '';
+    position: absolute;
+    left: 48%;
+    bottom: -20px;
+    border: 10px solid transparent;
+    border-top: 10px solid #f9f9f9;
+}
+
+#modal_callback_ok .top i {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #ff7f1b;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 28px;
+    margin: 0 auto;
+}
+
+#modal_callback_ok .top h4 {
+    font: 25px Roboto, Arial, sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+#modal_callback_ok .bottom {
+    background-color: #ff7f1b;
+    padding: 15px;
+}
+
+#modal_callback_ok .bottom h3 {
+    font: 25px Roboto, Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    text-transform: none;
+}
+
+.fa-check:before {
+    content: "\f00c";
+    font-family: FontAwesome;
 }

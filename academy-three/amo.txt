@@ -1354,3 +1354,63 @@ ndv25@mail.ru
  phone=+79161169048
 
 /var/www/u0375939/data/www/pronetworking.ru
+
+/***************2018-02-22 19:12:20***************/
+
+ name=ку
+
+ email=d@nm.io
+
+ phone=+375123232323
+
+D:/Programs/OSPanel/domains/academy-funnel-dev
+
+/***************2018-02-22 19:22:26***************/
+
+ name=re
+
+ email=teds@mail.ru
+
+ phone=+375231234567
+
+D:/Programs/OSPanel/domains/academy-funnel-dev
+
+/***************2018-02-22 19:24:14***************/
+
+ name=dd
+
+ email=ty@gb.com
+
+ phone=+375291569512
+
+D:/Programs/OSPanel/domains/academy-funnel-dev
+
+/***************2018-02-22 19:29:01***************/
+
+ name=rd
+
+ email=teset@mail.ru
+
+ phone=+375123453445
+
+D:/Programs/OSPanel/domains/academy-funnel-dev
+
+/***************2018-02-22 19:30:00***************/
+
+ name=rd
+
+ email=ct@h.io
+
+ phone=+375343453434
+
+D:/Programs/OSPanel/domains/academy-funnel-dev
+
+/***************2018-02-22 19:41:10***************/
+
+ name=re
+
+ email=tuk@mail.ru
+
+ phone=+375121231212
+
+D:/Programs/OSPanel/domains/academy-funnel-dev
