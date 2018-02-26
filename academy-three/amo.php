@@ -20,14 +20,19 @@ fwrite($fd, "\n" . $_SERVER['DOCUMENT_ROOT'] . "\n");
 //if(include '../../academy.pronetworking.ru/payment/utils/amo_utils.php'){
 //    fwrite($fd, "\n" . "amo_utils.php" . "\n");
 //}
+
 require_once("includes/ActiveCampaign.class.php");
 //include '../../academy.pronetworking.ru/payment/utils/ac_utils.php';
-include '../../academy.pronetworking.ru/payment/utils/amo_utils.php';
+include $_SERVER['DOCUMENT_ROOT'].'../../academy.pronetworking.ru/payment/utils/amo_utils.php';
 
 $ac = new ActiveCampaign("https://pronetworking.api-us1.com/", "32bc8e69aaaf47fb7e2d52cbe81e1205004a4aa503039669f2398532dfea7bd6a33b3498");
 
+$roistatVisitId = array_key_exists('roistat_visit', $_COOKIE) ? $_COOKIE['roistat_visit'] : "неизвестно";
+fwrite($fd, "\n roistatVisitId=" . $roistatVisitId . "\n");
+
+
 if( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email']) ) {
-    addFromFormWithTag($_POST['name'], $_POST['email'], isset($_POST['phone']) ? $_POST['phone'] : '-', "Заявка с pronetworking.ru/academy-three", "pronetworking.ru/academy-three");
+    addFromFormWithTagAndRoi($_POST['name'], $_POST['email'], isset($_POST['phone']) ? $_POST['phone'] : '-', "Заявка с pronetworking.ru/academy-three", "pronetworking.ru/academy-three", $roistatVisitId);
 //    contact_tag_add($_POST['email'], $_POST['name'], $_POST['phone'],  array(TAG_ACADEMY_SUB));
 
 

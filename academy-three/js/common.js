@@ -318,10 +318,11 @@ function submitForm() {
       // var phone = 5151515151515;
 
       if(name && email && phone) {
-        $(".loader").fadeIn();
+        /*$(".loader").fadeIn();*/
           $.ajax({
               type: 'POST',
-              url: '/academy-three/amo.php',
+              // url: '/academy-three/amo.php',
+              url: 'amo.php',
               method: 'post',
               data: 'name='+name+'&email='+email+'&phone='+encodeURIComponent(phone),
               success: function () {
@@ -331,7 +332,7 @@ function submitForm() {
                 var pop = me.closest('.modalWrapper').find('.triggerClose');*/
                 //создание попапа, отправка формы, перенаправление
                 setTimeout(function() {
-                  $(".loader").fadeOut();
+                  /*$(".loader").fadeOut();*/
                   $(".modal-success").fadeIn();
                           
                   dataLayer.push({'event': 'event_name'});
