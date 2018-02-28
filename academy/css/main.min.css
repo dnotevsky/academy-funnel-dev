@@ -3804,7 +3804,7 @@ header .partners img {
 
 .section13 .item .block {
     padding: 46px 23px 22px 73px;
-    min-height: 1550px;
+    /*min-height: 1550px;*/
     -webkit-box-shadow: 0 0 32px 6px rgba(0, 0, 0, .05);
     box-shadow: 0 0 32px 6px rgba(0, 0, 0, .05);
     margin-bottom: 48px
@@ -3915,9 +3915,9 @@ header .partners img {
     background: url(../img/prc-1.png) center top no-repeat
 }
 
-.section13 .item.left .block ul:first-of-type {
+/*.section13 .item.left .block ul:first-of-type {
     margin: 35px 0 208px 0
-}
+}*/
 
 .section13 .item.left .block p.text {
     color: #1e213a
@@ -4121,9 +4121,9 @@ footer p a:hover {
     header {
         background-size: cover;
     }
-    .section7 .item .block, .section13 .item .block {
+    /*.section7 .item .block, .section13 .item .block {
         min-height: 1380px;
-    }
+    }*/
     .section6 .big-slider .item.three, .section6 .small-content .item.three,
     .section6 .big-slider .item.two, .section6 .small-content .item.two,
     .section6 .big-slider .item.one, .section6 .small-content .item.one {
@@ -4906,7 +4906,7 @@ footer p a:hover {
 
     .section13 .item .block {
         padding: 46px 23px 22px 60px;
-        min-height: 1550px;
+        /*min-height: 1550px;*/
         margin-bottom: 48px
     }
 
@@ -5647,7 +5647,7 @@ footer p a:hover {
 
     .section13 .item .block {
         padding: 46px 23px 22px 35px;
-        min-height: 1922px;
+        /*min-height: 1922px;*/
         margin-bottom: 48px
     }
 
@@ -6461,7 +6461,7 @@ footer p a:hover {
     .section13 .item .block {
         background-color: #fff !important;
         padding: 46px 23px 22px 30px;
-        min-height: 2020px;
+        /*min-height: 2020px;*/
         margin-bottom: 48px
     }
 
