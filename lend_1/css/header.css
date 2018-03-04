@@ -141,6 +141,9 @@ p.text span {
   font-size: 18px;
   font-weight: 900
 }
+p.text span.present {
+  color: #ff7f1b;
+}
 
 .h1,
 h1 {
@@ -151,6 +154,7 @@ h1 {
   font-weight: 900;
   line-height: 48px;
   text-transform: uppercase
+
 }
 
 header {

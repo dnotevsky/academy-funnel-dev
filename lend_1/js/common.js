@@ -189,21 +189,21 @@ $(function() {
             var form = btn.closest('form');
             var name = form.find('[name=name]').val();
             var email = form.find('[name=email]').val();
-			function goJs() {window.location = 'https://events.genndi.com/ew/auto-register?webicode=6eb2012475&memberid=169105139238453049&firstname='+ name +'&email='+ email +'&schedule=1'};
+			//function goJs() {window.location = 'https://events.genndi.com/ew/auto-register?webicode=6eb2012475&memberid=169105139238453049&firstname='+ name +'&email='+ email +'&schedule=1'};
+            function goJs() {window.location = 'https://pronetworking.ru/stranitsa-spasibo-za-registratsiiu-na-laif-vebinar-06-03.html'};
             if( form && name && email) {
-
+            	$(".loader").fadeIn();
                 $.ajax({
                     type: 'POST',
                     url: '/lend_1/amo.php',
                     method: 'post',
                     data: 'name='+name+'&email='+email,
                     success: function () {
-                    	$(".loader").fadeIn();
                     	console.log('Успех');
                         // Настройки модального окна после удачной отправки
                         setTimeout(function() {
 	                    	$(".loader").fadeOut();
-	                    	$(".modal-success").fadeIn();
+	                    	// $(".modal-success").fadeIn();
 		                	
 	                		dataLayer.push({'event': 'event_name'});
 	                        $( "#modal_callback_ok .top h4" ).remove();
@@ -216,7 +216,7 @@ $(function() {
 	                        // $("#call_ok")[0].click();
 							setTimeout(function() {
 								goJs();
-							}, 2400);
+							}, 500);
 								
 		                	
 	                    }, 1000);
